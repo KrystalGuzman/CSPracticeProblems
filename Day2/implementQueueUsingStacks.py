@@ -21,9 +21,11 @@ class MyQueue:
         Removes the element from in front of queue and returns that element.
         """
         ret = self.out_stack.pop()
-        
+        #loops through in_stack
         for _ in range(len(self.in_stack)-1):
+            #appends value to out_stack
             self.out_stack.append(self.in_stack.pop())
+        #sets in and out stack values
         self.in_stack, self.out_stack = self.out_stack, self.in_stack
                 
         return ret
